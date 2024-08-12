@@ -1,1 +1,6 @@
-<p>auth-layout works!</p>
+<mat-grid-list cols="12" rowHeight="100%">
+  <mat-grid-tile colspan="7">
+    <img class="h-full w-full object-cover" [src]="loginBannerPath" />
+  </mat-grid-tile>
+  <mat-grid-tile colspan="5"><router-outlet /></mat-grid-tile>
+</mat-grid-list>
