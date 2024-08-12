@@ -1,0 +1,28 @@
+<div class="w-64 h-screen bg-primary-800 text-white flex flex-col items-center">
+  <div class="w-40 h-40">
+    <img class="h-full w-full object-fill" [src]="logoSrc" alt="logo" />
+  </div>
+  <nav class="flex-1 px-2 py-4 gap-1 flex flex-col w-64">
+    @for (navItem of navItems; track $index) {
+    <a mat-list-item [routerLink]="navItem.route">
+      <div
+        class="flex items-center gap-2 text-white hover:bg-primary-700 p-4 rounded-lg w-full duration-300"
+        [ngClass]="{
+          'bg-primary-600 hover:bg-primary-600': isActive(navItem.route)
+        }"
+      >
+        <mat-icon>{{ navItem.icon }}</mat-icon>
+        <div>{{ navItem.label }}</div>
+      </div>
+    </a>
+    }
+    <a class="mt-auto" mat-list-item [routerLink]="logoutNav.route">
+      <div
+        class="flex items-center gap-2 text-white hover:bg-primary-700 p-4 rounded-lg w-full duration-300"
+      >
+        <mat-icon>{{ logoutNav.icon }}</mat-icon>
+        <div>{{ logoutNav.label }}</div>
+      </div>
+    </a>
+  </nav>
+</div>
