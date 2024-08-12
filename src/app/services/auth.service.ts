@@ -8,7 +8,7 @@ import { IAuth } from '../common/types/models/auth.model';
 @Injectable({
   providedIn: 'root',
 })
-export class UsersService {
+export class AuthService {
   private httpClient = inject(HttpClient);
 
   login(email: string, password: string) {

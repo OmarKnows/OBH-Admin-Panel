@@ -5,18 +5,22 @@
     <mat-icon fontIcon="lock" class="material-icons-outlined" />
   </div>
   <div class="text-2xl">Sign In</div>
-  <form class="flex flex-col justify-center items-center gap-4 w-full">
+  <form
+    class="flex flex-col justify-center items-center gap-4 w-full"
+    #loginForm="ngForm"
+    (ngSubmit)="onSubmit(loginForm)"
+  >
     <mat-form-field class="w-full">
       <mat-label>Email</mat-label>
-      <input matInput class="w-full" />
+      <input matInput class="w-full" ngModel name="email" />
       <mat-icon matPrefix fontIcon="mail" class="material-icons-outlined" />
     </mat-form-field>
     <mat-form-field class="w-full">
       <mat-label>Password</mat-label>
-      <input matInput class="w-full" type="password" />
+      <input matInput class="w-full" type="password" ngModel name="password" />
       <mat-icon matPrefix fontIcon="lock" class="material-icons-outlined" />
     </mat-form-field>
-    <button routerLink="/" mat-flat-button class="w-full" type="button">
+    <button mat-flat-button class="w-full">
       <mat-icon fontIcon="lock_open" class="material-icons-outlined" />
       Sign In
     </button>
