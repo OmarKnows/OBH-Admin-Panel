@@ -1,27 +1,27 @@
-# OBHAdminPanel
+## OBH Admin - Angular Edition
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.1.2.
+This project is a recreation of the OBH Admin interface, originally built with React, using Angular 18.1.2. The goal of this project is to demonstrate how the same functionality and design can be implemented in Angular, leveraging its latest features and tools.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Key Features:
 
-## Code scaffolding
+- Rebuilt all components and pages from React to Angular 18.1.2.
+- Utilized Angular's robust ecosystem, including NgRx for state management, Angular Material component library, tailwind css for styling and Angular Icons.
+- Maintained the original design and user experience, with enhancements where applicable.
+- Fully responsive and optimized for performance.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Why Angular?
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Angular offers a comprehensive framework with strong typing, dependency injection, and a powerful CLI, making it an excellent choice for large-scale applications. This project showcases how Angular can be used to achieve the same results as React while taking advantage of Angular's unique strengths.
 
-## Running unit tests
+## How To Run
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. Clone the repository:
+   ```git clone https://github.com/your-username/obh-admin-angular.git```
+2. Navigate to the project directory:
+  ```cd OBH-Admin-Panel```
+3. Install Dependencies:
+   ```npm install```
+4. Start the development server:
+   ```ng serve```
