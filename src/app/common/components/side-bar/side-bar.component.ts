@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
 import {
   IsActiveMatchOptions,
@@ -17,7 +17,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './side-bar.component.html',
 })
 export class SideBarComponent {
-  constructor(private router: Router) {}
+  private router = inject(Router);
 
   logoSrc = 'assets/logos/logo-white.svg';
   navItems: INavItem[] = [
@@ -35,7 +35,7 @@ export class SideBarComponent {
     label: 'Logout',
     route: `${ROUTES.AUTH}/${ROUTES.LOGIN}`,
   };
-  myMatchOptions: IsActiveMatchOptions = {
+  options: IsActiveMatchOptions = {
     queryParams: 'ignored',
     matrixParams: 'exact',
     paths: 'exact',
@@ -45,7 +45,7 @@ export class SideBarComponent {
   isActive(route: string): boolean {
     return this.router.isActive(
       this.router.createUrlTree([route]),
-      this.myMatchOptions
+      this.options
     );
   }
 }
