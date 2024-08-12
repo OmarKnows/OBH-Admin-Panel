@@ -11,7 +11,9 @@ export interface IResponse<T> {
 }
 
 export interface IAuthResponse {
-  data: IAuth;
+  payload: {
+    data: IAuth;
+  };
   localizedMessage: localizedText;
   statusCode: number;
 }

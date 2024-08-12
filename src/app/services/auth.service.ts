@@ -1,9 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { EAPI } from '../constants/eapi';
 import { catchError, tap, throwError } from 'rxjs';
 import { IAuthResponse } from '../common/types/shared.types';
-import { IAuth } from '../common/types/models/auth.model';
+import { EAPI } from '../constants/eapi';
 import { ELocalStorage } from '../constants/local-storage';
 
 @Injectable({
@@ -20,13 +19,14 @@ export class AuthService {
       })
       .pipe(
         tap((response: IAuthResponse) => {
+          console.log(response);
           localStorage.setItem(
             ELocalStorage.ACCESS_TOKEN,
-            response.data.accessToken
+            response.payload.data.accessToken
           );
           localStorage.setItem(
             ELocalStorage.REFRESH_TOKEN,
-            response.data.refreshToken
+            response.payload.data.refreshToken
           );
         }),
         catchError((error: any) => {
