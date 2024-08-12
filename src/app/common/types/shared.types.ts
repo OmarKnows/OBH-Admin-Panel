@@ -1,3 +1,5 @@
+import { IAuth } from './models/auth.model';
+
 export interface IResponse<T> {
   data: T[];
   total: number;
@@ -8,10 +10,11 @@ export interface IResponse<T> {
   statusCode: number;
 }
 
-export type IAuthResponse<T> = Omit<
-  IResponse<T>,
-  'total' | 'limit' | 'pages' | 'page'
->;
+export interface IAuthResponse {
+  data: IAuth;
+  localizedMessage: localizedText;
+  statusCode: number;
+}
 
 export interface localizedText {
   en: string;
