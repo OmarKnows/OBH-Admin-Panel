@@ -9,6 +9,7 @@ import { ROUTES } from '../../../constants/routes';
 import { Router } from '@angular/router';
 import { INavItem } from '../../types/interfaces/nav-item.interface';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-side-bar',
@@ -18,6 +19,7 @@ import { CommonModule } from '@angular/common';
 })
 export class SideBarComponent {
   private router = inject(Router);
+  private authService = inject(AuthService);
 
   logoSrc = 'assets/logos/logo-white.svg';
   navItems: INavItem[] = [
@@ -47,5 +49,9 @@ export class SideBarComponent {
       this.router.createUrlTree([route]),
       this.options
     );
+  }
+
+  onLogout() {
+    this.authService.logout();
   }
 }

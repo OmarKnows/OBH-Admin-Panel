@@ -16,7 +16,12 @@
       </div>
     </a>
     }
-    <a class="mt-auto" mat-list-item [routerLink]="logoutNav.route">
+    <a
+      class="mt-auto"
+      mat-list-item
+      [routerLink]="logoutNav.route"
+      (click)="onLogout()"
+    >
       <div
         class="flex items-center gap-2 text-white hover:bg-primary-700 p-4 rounded-lg w-full duration-300"
       >

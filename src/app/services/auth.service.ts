@@ -37,4 +37,9 @@ export class AuthService {
         })
       );
   }
+
+  logout() {
+    localStorage.removeItem(ELocalStorage.ACCESS_TOKEN);
+    localStorage.removeItem(ELocalStorage.REFRESH_TOKEN);
+  }
 }
