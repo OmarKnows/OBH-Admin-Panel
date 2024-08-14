@@ -1,0 +1,4 @@
+<ng-container [matColumnDef]="matColumnDef()">
+  <th mat-header-cell *matHeaderCellDef>{{ columnLabel() }}</th>
+  <td mat-cell *matCellDef="let element"><ng-content></ng-content></td>
+</ng-container>
