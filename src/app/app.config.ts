@@ -9,6 +9,8 @@ import { routes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { ApiInterceptor } from './interceptors/api.interceptor';
+import { provideStore } from '@ngrx/store';
+import { loaderReducer } from './store/loader/loader.reducer';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,5 +24,8 @@ export const appConfig: ApplicationConfig = {
       })
     ),
     provideAnimationsAsync(),
+    provideStore({
+      isLoading: loaderReducer,
+    }),
   ],
 };
