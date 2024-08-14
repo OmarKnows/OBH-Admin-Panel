@@ -6,7 +6,7 @@ export interface IResponse<T> {
   limit: number;
   pages: number;
   page: number;
-  localizedMessage: localizedText;
+  localizedMessage: ILocalizedText;
   statusCode: number;
 }
 
@@ -14,11 +14,11 @@ export interface IAuthResponse {
   payload: {
     data: IAuth;
   };
-  localizedMessage: localizedText;
+  localizedMessage: ILocalizedText;
   statusCode: number;
 }
 
-export interface localizedText {
+export interface ILocalizedText {
   en: string;
   ar: string;
 }
