@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { Component, input, OnInit } from '@angular/core';
 import { MatTableModule } from '@angular/material/table';
 
 @Component({
@@ -8,7 +8,11 @@ import { MatTableModule } from '@angular/material/table';
   templateUrl: './col.component.html',
   styleUrl: './col.component.scss',
 })
-export class ColComponent {
-  matColumnDef = input.required<string>();
+export class ColComponent implements OnInit {
+  columnIdentifier = input.required<string>();
   columnLabel = input.required<string>();
+
+  ngOnInit(): void {
+    console.log(this.columnIdentifier());
+  }
 }
