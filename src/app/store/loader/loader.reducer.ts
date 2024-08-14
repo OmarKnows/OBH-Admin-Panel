@@ -1,5 +1,10 @@
-import { createReducer } from '@ngrx/store';
+import { createReducer, on } from '@ngrx/store';
+import { hideLoader, showLoader } from './loader.actions';
 
-const initialState = false;
+const initialState: boolean = false;
 
-export const loaderReducer = createReducer(initialState);
+export const loaderReducer = createReducer(
+  initialState,
+  on(showLoader, () => true),
+  on(hideLoader, () => false)
+);
