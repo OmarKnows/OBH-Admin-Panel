@@ -1,4 +1,7 @@
 <mat-grid-list cols="12" rowHeight="100%">
+  @if(isLoading$ | async){
+  <mat-progress-bar mode="indeterminate" class="z-10"></mat-progress-bar>
+  }
   <mat-grid-tile colspan="7">
     <img class="h-full w-full object-cover" [src]="loginBannerPath" />
   </mat-grid-tile>
